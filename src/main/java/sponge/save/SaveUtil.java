@@ -1,7 +1,7 @@
-package save;
+package sponge.save;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import parameters.Parameters;
+import sponge.parameters.Parameters;
 import processing.core.PApplet;
 
 import java.io.File;
@@ -13,7 +13,7 @@ public class SaveUtil {
     private static final String SAVE_DIRECTORY = "renders/";
 
     /**
-     * Export the sketch parameters to a json file
+     * Export the sketch sponge.parameters to a json file
      */
     public static void saveParameters(String fileName) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -26,7 +26,7 @@ public class SaveUtil {
     }
 
     /**
-     * Saves sketch as a png file and its parameters as a json file
+     * Saves sketch as a png file and its sponge.parameters as a json file
      */
     public static void saveSketch(PApplet pApplet) {
 
@@ -39,7 +39,7 @@ public class SaveUtil {
         // Get the date and time
         String now = ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));
 
-        // Build the save file names
+        // Build the sponge.save file names
         String saveFileName = String.format("%s - %s", callerName, now);
         String saveRenderName = SAVE_DIRECTORY + saveFileName + ".png";
         String saveParametersName = SAVE_DIRECTORY + saveFileName + ".json";
